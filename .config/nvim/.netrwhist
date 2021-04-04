@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/jorgebodega/projects/wallbox-installations-api/code'
+let g:netrw_dirhist_4='/home/jorgebodega/projects/dotpyle'
+let g:netrw_dirhist_3='/home/jorgebodega/projects/website'
+let g:netrw_dirhist_2='/home/jorgebodega/.config/nvim'
+let g:netrw_dirhist_1='/home/jorgebodega/.config/nvim/general'
+let g:netrw_dirhist_0='/home/jorgebodega/.config/nvim'
+let g:netrw_dirhist_9='/home/jorgebodega/projects/website'
+let g:netrw_dirhist_8='/home/jorgebodega/projects/test-chuck/src/routers'
+let g:netrw_dirhist_7='/home/jorgebodega/projects/test-chuck/src'
+let g:netrw_dirhist_6='/home/jorgebodega/projects/test-chuck'

@@ -1,14 +1,12 @@
 #!/bin/zsh
 
 install_starship() {
-    if ! [ $+commands[zsh] ]; then
-        echo "Zsh must be installed"
-        exit 1
-    fi
-
-    echo Installing starship dependencies
-    echo Installed starship dependencies
+    echo Installing starship optional dependencies
+    sudo pacman -S --noconfirm noto-fonts-emoji
+    paru -S --noconfirm powerline-fonts
+    echo Installed starship optional dependencies
 
     echo Installing starship
+    pacman -S --noconfirm starship
     echo Installed starship
 }
