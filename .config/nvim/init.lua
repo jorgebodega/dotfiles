@@ -18,7 +18,7 @@ require 'filetypes'
 
 -- require 'lt.fix-cursorhold.settings'
 
--- require 'lt.netrw.settings'
+require 'netrw'
 
 -- require 'lt.snippets'
 require 'lsp'

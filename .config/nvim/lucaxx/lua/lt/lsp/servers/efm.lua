@@ -1,23 +1,23 @@
 local lsp = require('lspconfig')
-local functions = require "utils.functions"
+local functions = require "lt.utils.functions"
 
-local luafmt = require "lsp.servers.formatters.luafmt"
-local prettier = require "lsp.servers.formatters.prettier"
-local eslint = require "lsp.servers.linters.eslint_d"
+-- local luafmt = require "lt.lsp.servers.efm.formatters.luafmt"
+local prettier = require "lt.lsp.servers.formatters.prettier"
+local eslint_d = require "lt.lsp.servers.linters.eslint_d"
 
 local languages = {
-    lua = {luafmt},
-    typescript = {prettier, eslint},
-    -- javascript = {prettier, eslint},
-    typescriptreact = {prettier, eslint},
-    ['typescript.tsx'] = {prettier, eslint},
-    -- javascriptreact = {prettier, eslint},
-    -- ['javascript.jsx'] = {prettier, eslint},
+    -- lua = {luafmt},
+    typescript = {prettier, eslint_d},
+    javascript = {prettier, eslint_d},
+    typescriptreact = {prettier, eslint_d},
+    ['typescript.tsx'] = {prettier, eslint_d},
+    javascriptreact = {prettier, eslint_d},
+    ['javascript.jsx'] = {prettier, eslint_d},
     yaml = {prettier},
     json = {prettier},
-    -- html = {prettier},
-    -- scss = {prettier},
-    -- css = {prettier},
+    html = {prettier},
+    scss = {prettier},
+    css = {prettier},
     markdown = {prettier}
 }
 
@@ -64,7 +64,7 @@ return function(language_server_path)
             print 'eslint configuration not found'
             return nil
           end]]
-            -- check if eslint installed globally!
+            -- check if eslint_d installed globally!
             -- return lsp.util.root_pattern("package.json", ".git", vim.fn.getcwd())
             return vim.fn.getcwd()
         end,

@@ -1,5 +1,6 @@
 require 'utils.events'
 require 'utils.remaps'
+require 'utils.globals'
 
 local M = {}
 

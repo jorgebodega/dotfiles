@@ -1,7 +1,7 @@
 local lsp = require('lspconfig')
 
 -- local lsp_completion = require('completion') -- TODO: Uncomment when package is enabled
--- local lsp_status  = require('lsp-status') -- TODO: Uncomment when package is enabled
+local lsp_status = require('lsp-status')
 local remaps = require('lsp.remaps')
 
 -- for debugging lsp
@@ -11,7 +11,7 @@ local remaps = require('lsp.remaps')
 local function on_attach(client, bufnr)
     remaps.set(client.server_capabilities, bufnr)
     -- lsp_completion.on_attach(client, bufnr) -- TODO: Uncomment when package is enabled
-    -- lsp_status.on_attach(client, bufnr) -- TODO: Uncomment when package is enabled
+    lsp_status.on_attach(client, bufnr)
 
     -- adds beatiful icon to completion
     -- require('lspkind').init() -- TODO: Uncomment when package is enabled
@@ -27,11 +27,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
         update_in_insert = false
     })
 
--- lsp_status.register_progress() -- TODO: Uncomment when package is enabled
+lsp_status.register_progress()
 
 local default_lsp_config = {
-    on_attach = on_attach
-    -- capabilities = lsp_status.capabilities -- TODO: Uncomment when package is enabled
+    on_attach = on_attach,
+    capabilities = lsp_status.capabilities
 }
 local language_server_path = vim.fn.stdpath("cache") .. "/lspconfig"
 

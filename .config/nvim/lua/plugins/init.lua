@@ -56,6 +56,7 @@ require('packer').startup {
             require 'plugins.fzf'
         end}
 
+        -- This is not acceptable. Maybe it will be changed when 0.5 release.
         -- Autocomplete & Linters
         use 'neovim/nvim-lspconfig'
         use 'glepnir/lspsaga.nvim'
@@ -65,6 +66,13 @@ require('packer').startup {
 
         -- TODO: check the tjdevries library
         use 'mattn/vim-lsp-settings'
+        use 'prabirshrestha/vim-lsp'
+
+        -- Snippets
+        use {'hrsh7th/vim-vsnip', config = function()
+            require 'plugins.snippets'
+        end}
+        use 'hrsh7th/vim-vsnip-integ'
 
         -- use {
         --   'nvim-telescope/telescope.nvim',

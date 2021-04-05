@@ -1,9 +1,13 @@
--- Needs to run `npm install -g typescript typescript-language-server` in order to work properly
+local util = require 'lspconfig/util'
+
 return function(language_server_path, on_attach)
     local bin_path = language_server_path ..
                          "/typescript-language-server/typescript-language-server"
     return {
         cmd = {bin_path, "--stdio"},
+        filetypes = {"javascript", "typescript"},
+        root_dir = util.root_pattern("package.json", "tsconfig.json",
+                                     "jsconfig.json", ".git"),
         on_attach = function(client, bufnr)
             on_attach(client, bufnr)
 
