@@ -30,7 +30,6 @@ return require('packer').startup {
         use 'mhinz/vim-startify' -- start screen
         use 'tweekmonster/startuptime.vim' -- benchmark startup
 
-
         use 'tpope/vim-fugitive' -- git
         use 'airblade/vim-rooter'
         use 'lewis6991/gitsigns.nvim'

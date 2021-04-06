@@ -69,9 +69,10 @@ require('packer').startup {
         use 'prabirshrestha/vim-lsp'
 
         -- Snippets
-        use {'hrsh7th/vim-vsnip', config = function()
-            require 'plugins.snippets'
-        end}
+        use {
+            'hrsh7th/vim-vsnip',
+            config = function() require 'plugins.snippets' end
+        }
         use 'hrsh7th/vim-vsnip-integ'
 
         -- use {

@@ -4,7 +4,7 @@ require 'utils'
 require 'plugins'
 require 'filetypes'
 
--- require 'lt.defaults'
+require 'defaults'
 
 -- require 'lt.window.remaps'
 -- require 'lt.project.remaps'
