@@ -55,12 +55,6 @@ nnoremap('<leader>P', '"+P')
 vnoremap('<leader>p', '"+p')
 vnoremap('<leader>P', '"+P')
 
--- Remap convenient change between windows commands
-nnoremap('<leader>h', '<cmd>wincmd h<CR>')
-nnoremap('<leader>j', '<cmd>wincmd j<CR>')
-nnoremap('<leader>k', '<cmd>wincmd k<CR>')
-nnoremap('<leader>l', '<cmd>wincmd l<CR>')
-
 -- Operator pending mappings
 -- Same as Xi(  shorted to Xp
 onoremap('p', 'i(')

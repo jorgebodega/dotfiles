@@ -1,2 +1,2 @@
--- require 'lt.plugins.nvim-tree.settings'
--- require 'lt.plugins.nvim-tree.remaps'
+require 'plugins.nvim-tree.settings'
+require 'plugins.nvim-tree.remaps'
