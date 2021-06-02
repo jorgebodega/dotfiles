@@ -1,40 +1,56 @@
-require 'theme'
-require 'utils'
-
-require 'plugins'
-require 'filetypes'
-
-require 'defaults'
-
--- require 'lt.window.remaps'
--- require 'lt.project.remaps'
--- require 'lt.buffer.remaps'
--- require 'lt.editor.remaps'
--- require 'lt.git'
-
--- -- TODO: fix
--- require 'lt.startify.settings'
--- require 'lt.startify.remaps'
-
--- require 'lt.fix-cursorhold.settings'
-
-require 'netrw'
-
--- require 'lt.snippets'
-require 'lsp'
-
--- require 'lt.treesitter.settings'
-
--- require 'lt.sneak'
-
--- require 'lt.hexokinase.settings'
-
--- require 'lt.which-key.settings'
--- require 'lt.which-key.remaps'
-
--- require 'lt.ripgrep.settings'
-
--- require 'lt.camelcasemotion.settings'
-
--- require 'lt.firenvim.settings'
-
+-- require 'theme'
+-- require 'utils'
+-- require 'plugins'
+-- require 'filetypes'
+-- require 'defaults'
+-- require 'window'
+-- require 'netrw'
+-- -- require 'lsp'
+-- Packer
+require('plugins')
+-- utils
+require('utils.globals')
+require('utils.remaps')
+-- Config
+require('settings')
+require('settings.color')
+require('settings.font')
+require('settings.completion')
+require('settings.filetype')
+require('settings.netrw')
+-- LSP Config
+require('lsp')
+-- Plugins config
+require('plugins.feline')
+require('plugins.fterm')
+require('plugins.hlslens')
+require('plugins.treesitter')
+require('plugins.gitsigns')
+require('plugins.gitblame')
+require('plugins.nvim-autopairs')
+require('plugins.nvim-ts-rainbow')
+require('plugins.nvimtree')
+require('plugins.indent-guides')
+require('plugins.telescope')
+require('plugins.numb')
+require('plugins.vim-startify')
+require('plugins.ctrlsf')
+require('plugins.editorconfig')
+-- require('plugins.vim-gutentags')
+require('plugins.vim-rooter')
+require('plugins.vim-rubocop')
+require('plugins.vim-signature')
+require('plugins.vim-fugitive')
+require('plugins.vim-sneak')
+require('plugins.lspkind')
+require('plugins.neoscroll')
+require('plugins.minimap')
+require('plugins.diffview')
+require('plugins.todo-comments')
+require('plugins.betterescape')
+require('plugins.firenvim')
+require('plugins.kommentary')
+require('plugins.sideways')
+require('plugins.splitjoin')
+-- Keymap
+require('settings.keymap')
