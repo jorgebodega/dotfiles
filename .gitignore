@@ -1,4 +1,2 @@
-
-.config/nvim/plugin/packer_compiled.vim
-
+packer_compiled.vim
 .config/nvim/.vscode/

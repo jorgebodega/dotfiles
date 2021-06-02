@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind-nvim'
+    use 'kabouzeid/nvim-lspinstall'
     -- use 'glepnir/lspsaga.nvim'
     -- use 'nvim-lua/lsp-status.nvim'
 
@@ -37,8 +38,6 @@ return require('packer').startup(function(use)
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'p00f/nvim-ts-rainbow'
     use 'glepnir/indent-guides.nvim'
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use 'romgrk/nvim-treesitter-context'
 
     -- Syntax
     use 'moll/vim-node'
@@ -72,13 +71,10 @@ return require('packer').startup(function(use)
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
-    use 'kdheepak/lazygit.nvim'
+    -- use 'kdheepak/lazygit.nvim'
     -- use 'rhysd/committia.vim'
     use 'sindrets/diffview.nvim'
     use 'f-person/git-blame.nvim'
-
-    -- Flutter
-    -- use 'akinsho/flutter-tools.nvim'
 
     -- Registers
     use 'tversteeg/registers.nvim'
@@ -88,7 +84,6 @@ return require('packer').startup(function(use)
     use 'nacro90/numb.nvim'
     use 'dyng/ctrlsf.vim'
     use 'kevinhwang91/nvim-hlslens'
-    use 'justinmk/vim-sneak'
     use 'kshenoy/vim-signature'
     use 'karb94/neoscroll.nvim'
     use 'dstein64/nvim-scrollview'
