@@ -8,6 +8,5 @@ vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_sign_column_background = 'none'
 vim.cmd 'color gruvbox-material'
 
--- vim.cmd('color nord')
--- vim.g.nord_comment_brightness = 15
+-- vim.cmd 'color nord'
 -- vim.o.background = 'dark'

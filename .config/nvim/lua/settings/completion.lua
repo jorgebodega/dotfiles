@@ -33,8 +33,15 @@ require'compe'.setup {
         tags = true,
         spell = false,
         calc = false,
-        ultisnips = true
+        ultisnips = true,
         -- nvim_lua = {'lua'},
+        vsnip = {
+            filetypes = {
+                'javascript', 'typescript', 'javascriptreact', 'javascript.jsx',
+                'typescriptreact', 'typescript.tsx'
+            },
+            sticky_char = '0'
+        }
     }
 }
 

@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'onsails/lspkind-nvim'
+    use 'onsails/lspkind-nvim' -- TODO: Check another packages
     use 'kabouzeid/nvim-lspinstall'
     -- use 'glepnir/lspsaga.nvim'
     -- use 'nvim-lua/lsp-status.nvim'
@@ -30,7 +30,9 @@ return require('packer').startup(function(use)
     -- Autocomplete
     use 'hrsh7th/nvim-compe'
     use 'SirVer/ultisnips'
-    use 'honza/vim-snippets'
+    -- use 'honza/vim-snippets'
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
     use 'windwp/nvim-autopairs'
 
     -- Treesitter
@@ -39,7 +41,6 @@ return require('packer').startup(function(use)
     use 'glepnir/indent-guides.nvim'
 
     -- Syntax
-    use 'moll/vim-node'
     -- use 'zinit-zsh/zplugin-vim-syntax'
     use 'editorconfig/editorconfig-vim'
     -- use 'chrisbra/csv.vim'
@@ -90,11 +91,11 @@ return require('packer').startup(function(use)
 
     -- Tim Pope docet
     -- use 'tpope/vim-rails'
-    use 'tpope/vim-surround'
     -- use 'tpope/vim-bundler'
+    -- use 'tpope/vim-rvm'
+    use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use 'tpope/vim-endwise'
-    -- use 'tpope/vim-rvm'
     -- use 'tpope/vim-dadbod'
     use 'tpope/vim-jdaddy'
     use 'tpope/vim-fugitive'
@@ -112,7 +113,6 @@ return require('packer').startup(function(use)
     -- General Plugins
     use 'jdhao/better-escape.vim'
     -- use 'lambdalisue/suda.vim'
-    use 'tweekmonster/startuptime.vim'
     use 'folke/todo-comments.nvim'
     use 'rrethy/vim-illuminate'
     use 'farmergreg/vim-lastplace'

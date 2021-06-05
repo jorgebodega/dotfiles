@@ -1,11 +1,3 @@
--- require 'theme'
--- require 'utils'
--- require 'plugins'
--- require 'filetypes'
--- require 'defaults'
--- require 'window'
--- require 'netrw'
--- -- require 'lsp'
 -- Packer
 require('plugins')
 -- utils
@@ -13,9 +5,10 @@ require('utils.remaps')
 -- Config
 require('settings')
 require('settings.color')
-require('settings.font')
 require('settings.completion')
 require('settings.filetype')
+require('settings.font')
+require('settings.keymap')
 require('settings.netrw')
 -- LSP Config
 require('lsp')
@@ -49,5 +42,4 @@ require('plugins.kommentary')
 require('plugins.sideways')
 require('plugins.splitjoin')
 require('plugins.nvim-reload')
--- Keymap
-require('settings.keymap')
+require('plugins.snippets')
