@@ -1,5 +1,4 @@
 -- reload
-nnoremap('<leader><CR>', '<cmd>lua reload()<CR>')
 nnoremap('Y', 'y$')
 nnoremap('X', '"_d')
 --  TAB in general mode will move to next buffer
@@ -84,26 +83,26 @@ vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)',
                         {noremap = false, silent = false})
 
 -- LSP
-vim.api.nvim_set_keymap('n', '<space>,',
+vim.api.nvim_set_keymap('n', '<leader>,',
                         ':lua vim.lsp.diagnostic.goto_prev()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>;',
+vim.api.nvim_set_keymap('n', '<leader>;',
                         ':lua vim.lsp.diagnostic.goto_next()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>a',
+vim.api.nvim_set_keymap('n', '<leader>a',
                         ':lua vim.lsp.diagnostic.code_action()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>d', ':lua vim.lsp.buf.definition()<CR>',
+vim.api.nvim_set_keymap('n', '<leader>d', ':lua vim.lsp.buf.definition()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>f', ':lua vim.lsp.buf.formatting()<CR>',
+vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.formatting()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>h', ':lua vim.lsp.buf.hover()<CR>',
+vim.api.nvim_set_keymap('n', '<leader>h', ':lua vim.lsp.buf.hover()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>m', ':lua vim.lsp.buf.rename()<CR>',
+vim.api.nvim_set_keymap('n', '<leader>m', ':lua vim.lsp.buf.rename()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>r', ':lua vim.lsp.buf.references()<CR>',
+vim.api.nvim_set_keymap('n', '<leader>r', ':lua vim.lsp.buf.references()<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<space>s',
+vim.api.nvim_set_keymap('n', '<leader>s',
                         ':lua vim.lsp.buf.document_symbol()<CR>',
                         {noremap = true, silent = true})
 

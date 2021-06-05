@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
     use 'windwp/nvim-autopairs'
-    use 'andymass/vim-matchup'
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -80,7 +79,6 @@ return require('packer').startup(function(use)
     use 'tversteeg/registers.nvim'
 
     -- Move & Search & replace
-    use 'windwp/nvim-spectre'
     use 'nacro90/numb.nvim'
     use 'dyng/ctrlsf.vim'
     use 'kevinhwang91/nvim-hlslens'
@@ -91,22 +89,17 @@ return require('packer').startup(function(use)
     use 'terryma/vim-expand-region'
 
     -- Tim Pope docet
-    use 'tpope/vim-sensible'
     -- use 'tpope/vim-rails'
-    use 'tpope/vim-abolish'
     use 'tpope/vim-surround'
     -- use 'tpope/vim-bundler'
-    use 'tpope/vim-capslock'
     use 'tpope/vim-repeat'
     use 'tpope/vim-endwise'
     -- use 'tpope/vim-rvm'
-    use 'tpope/vim-dispatch'
-    use 'tpope/vim-dadbod'
+    -- use 'tpope/vim-dadbod'
     use 'tpope/vim-jdaddy'
     use 'tpope/vim-fugitive'
 
     -- Tmux
-    use 'tmux-plugins/vim-tmux-focus-events'
     use 'christoomey/vim-tmux-navigator'
 
     -- Colorschema
@@ -118,7 +111,6 @@ return require('packer').startup(function(use)
 
     -- General Plugins
     use 'jdhao/better-escape.vim'
-    use 'numtostr/FTerm.nvim'
     -- use 'lambdalisue/suda.vim'
     use 'tweekmonster/startuptime.vim'
     use 'folke/todo-comments.nvim'
@@ -127,5 +119,6 @@ return require('packer').startup(function(use)
     use 'jeffkreeftmeijer/vim-numbertoggle'
     use 'airblade/vim-rooter'
     use 'mhinz/vim-startify'
+    use 'famiu/nvim-reload'
     -- use {'wfxr/minimap.vim', run = ':!cargo install --locked code-minimap'} -- TODO: Add command to install base package
 end)
