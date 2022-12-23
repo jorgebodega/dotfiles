@@ -13,7 +13,6 @@ plugins=(
     git
     kubectl
     npm
-    nvm
     rbenv
     ssh-agent
     zsh-autosuggestions
