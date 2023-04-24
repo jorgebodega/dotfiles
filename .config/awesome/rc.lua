@@ -61,9 +61,10 @@ terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
--- Common keyboards
-local super = "Mod4"
-local alt = "Mod1"
+-- Common useful keys
+_G.super = "Mod4"
+_G.escape = "Escape"
+_G.shift = "Shift"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -258,108 +259,50 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
--- General Awesome keys
-awful.keyboard.append_global_keybindings({
-	awful.key({ super }, "h", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
-	awful.key({ super, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-	awful.key({ super, "Control" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
-})
+-- Application related keybindings
+require("keybindings.application")
+
+-- Awesome keys
+require("keybindings.awesome")
+
+-- Screen related keybindings
+require("keybindings.screen")
 
 -- Tags related keybindings
-awful.keyboard.append_global_keybindings({
-	awful.key({ super }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-	awful.key({ super }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
-	awful.key({ super }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
-	awful.key({
-		modifiers = { super },
-		keygroup = "numrow",
-		description = "view tag",
-		group = "tag",
-		on_press = function(index)
-			local screen = awful.screen.focused()
-			local tag = screen.tags[index]
-			if tag then
-				tag:view_only()
-			end
-		end,
-	}),
-	awful.key({
-		modifiers = { super, "Shift" },
-		keygroup = "numrow",
-		description = "move focused client to tag",
-		group = "tag",
-		on_press = function(index)
-			if client.focus then
-				local tag = client.focus.screen.tags[index]
-				if tag then
-					client.focus:move_to_tag(tag)
-				end
-			end
-		end,
-	}),
-})
-
--- Focus related keybindings
-awful.keyboard.append_global_keybindings({
-	awful.key({ alt }, "Tab", function()
-		awful.client.focus.byidx(1)
-	end, { description = "focus next by index", group = "client" }),
-	awful.key({ super }, "period", function()
-		awful.screen.focus_relative(1)
-	end, { description = "focus the next screen", group = "screen" }),
-	awful.key({ super }, "comma", function()
-		awful.screen.focus_relative(-1)
-	end, { description = "focus the previous screen", group = "screen" }),
-})
-
--- Launcher related keybindings
-awful.keyboard.append_global_keybindings({
-	awful.key({ super }, "p", function()
-		menubar.show()
-	end, { description = "show the menubar", group = "launcher" }),
-})
-
--- Application related keybindings
-awful.keyboard.append_global_keybindings({
-	-- Terminal
-	awful.key({ super }, "Return", function()
-		awful.spawn(terminal)
-	end, { description = "open terminal", group = "application" }),
-	-- File explorer
-	awful.key({ super }, "e", function()
-		awful.spawn("thunar")
-	end, { description = "open file explorer", group = "application" }),
-	-- Browser
-	awful.key({ super }, "b", function()
-		awful.spawn("firefox")
-	end, { description = "open browser", group = "application" }),
-	-- Browser on private session
-	awful.key({ super, "Shift" }, "b", function()
-		awful.spawn("firefox --private-window")
-	end, { description = "open browser (private session)", group = "application" }),
-	-- Screenshot
-	awful.key({ super }, "s", function()
-		awful.spawn("flameshot gui")
-	end, { description = "open screenshot", group = "application" }),
-	-- VSCode
-	awful.key({ super }, "c", function()
-		awful.spawn("code")
-	end, { description = "open VSCode", group = "application" }),
-	-- VSCode
-	awful.key({ super }, "g", function()
-		awful.spawn("gitkraken")
-	end, { description = "open git gui", group = "application" }),
-})
+require("keybindings.tag")
 
 -- Client related keybindings
+awful.keyboard.append_global_keybindings({
+	awful.key({ super }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
+
+	-- Focus the previous/next clients in the current tag
+	awful.key({ super }, "j", function()
+		awful.client.focus.byidx(1)
+	end, { description = "focus the next client by index", group = "client" }),
+	awful.key({ super }, "k", function()
+		awful.client.focus.byidx(-1)
+	end, { description = "focus the previous client by index", group = "client" }),
+
+	-- Swap with the previous/next clients in the current tag
+	awful.key({ super, "Shift" }, "j", function()
+		awful.client.swap.byidx(1)
+	end, { description = "swap with next client by index", group = "client" }),
+	awful.key({ super, "Shift" }, "k", function()
+		awful.client.swap.byidx(-1)
+	end, { description = "swap with previous client by index", group = "client" }),
+})
+
 awful.keyboard.append_client_keybindings({
-	awful.key({ super }, "f", function(c)
-		c.fullscreen = not c.fullscreen
-		c:raise()
-	end, { description = "toggle fullscreen", group = "client" }),
-	awful.key({ super }, "w", function(c)
-		c:kill()
+	-- awful.key({ super }, "f", function(c)
+	-- 	c.fullscreen = not c.fullscreen
+	-- 	c:raise()
+	-- end, { description = "toggle fullscreen", group = "client" }),
+
+	-- Close client
+	awful.key({ super }, "q", function(client)
+		client:kill()
 	end, { description = "close client", group = "client" }),
+
 	awful.key({ "Control" }, "space", function(c)
 		awful.client.floating.toggle(c)
 		c.width = 1000
@@ -389,19 +332,15 @@ awful.keyboard.append_client_keybindings({
 	-- end, { description = "(un)maximize horizontally", group = "client" }),
 })
 
+-- Launcher related keybindings
+awful.keyboard.append_global_keybindings({
+	awful.key({ super }, "p", function()
+		menubar.show()
+	end, { description = "show the menubar", group = "launcher" }),
+})
+
 -- Layout related keybindings
 awful.keyboard.append_global_keybindings({
-	-- Focus the previous/next clients in the current tag
-
-	-- Move clients between the current tag
-	awful.key({ super, "Shift" }, "j", function()
-		awful.client.swap.byidx(1)
-	end, { description = "swap with next client by index", group = "client" }),
-	awful.key({ super, "Shift" }, "k", function()
-		awful.client.swap.byidx(-1)
-	end, { description = "swap with previous client by index", group = "client" }),
-
-	awful.key({ super }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
 	awful.key({ super }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
