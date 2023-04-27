@@ -68,12 +68,12 @@ _G.shift = "Shift"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-	awful.layout.suit.spiral.dwindle,
-	awful.layout.suit.floating,
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
 	awful.layout.suit.tile.bottom,
 	awful.layout.suit.tile.top,
+	awful.layout.suit.spiral.dwindle,
+	awful.layout.suit.floating,
 	awful.layout.suit.fair,
 	awful.layout.suit.fair.horizontal,
 	awful.layout.suit.spiral,
@@ -247,6 +247,7 @@ awful.screen.connect_for_each_screen(function(s)
 		},
 	})
 end)
+
 -- }}}
 
 -- {{{ Mouse bindings
@@ -259,7 +260,7 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
--- Keybindigs
+-- Keybindings
 require("keybindings.application") -- Application related keybindings
 require("keybindings.awesome") -- Awesome keys
 require("keybindings.client") -- Client related keybindings
@@ -270,23 +271,17 @@ require("keybindings.tag") -- Tags related keybindings
 -- Layout related keybindings
 awful.keyboard.append_global_keybindings({
 	awful.key({ super }, "l", function()
-		awful.tag.incmwfact(0.05)
+		awful.tag.incmwfact(0.1)
 	end, { description = "increase master width factor", group = "layout" }),
 	awful.key({ super }, "h", function()
-		awful.tag.incmwfact(-0.05)
+		awful.tag.incmwfact(-0.1)
 	end, { description = "decrease master width factor", group = "layout" }),
 	awful.key({ super, "Shift" }, "h", function()
-		awful.tag.incnmaster(1, nil, true)
+		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "increase the number of master clients", group = "layout" }),
 	awful.key({ super, "Shift" }, "l", function()
-		awful.tag.incnmaster(-1, nil, true)
+		awful.tag.incnmaster(1, nil, true)
 	end, { description = "decrease the number of master clients", group = "layout" }),
-	awful.key({ super, "Control" }, "h", function()
-		awful.tag.incncol(1, nil, true)
-	end, { description = "increase the number of columns", group = "layout" }),
-	awful.key({ super, "Control" }, "l", function()
-		awful.tag.incncol(-1, nil, true)
-	end, { description = "decrease the number of columns", group = "layout" }),
 	awful.key({ super }, "space", function()
 		awful.layout.inc(1)
 	end, { description = "select next", group = "layout" }),
@@ -386,18 +381,8 @@ awful.rules.rules = {
 }
 -- }}}
 
--- {{{ Signals
--- Signal function to execute when a new client appears.
-client.connect_signal("manage", function(c)
-	-- Set the windows at the slave,
-	-- i.e. put it at the end of others instead of setting it master.
-	-- if not awesome.startup then awful.client.setslave(c) end
-
-	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
-		-- Prevent clients from being unreachable after screen count changes.
-		awful.placement.no_offscreen(c)
-	end
-end)
+-- Signals
+require("signals.client")
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
@@ -439,17 +424,6 @@ client.connect_signal("request::titlebars", function(c)
 	})
 end)
 
--- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-	c:emit_signal("request::activate", "mouse_enter", { raise = false })
-end)
-
-client.connect_signal("focus", function(c)
-	c.border_color = beautiful.border_focus
-end)
-client.connect_signal("unfocus", function(c)
-	c.border_color = beautiful.border_normal
-end)
 -- }}}
 
 gears.timer({
@@ -461,7 +435,6 @@ gears.timer({
 })
 
 -- Autostart
-
 awful.spawn.with_shell("sh ~/.fehbg")
 awful.spawn.with_shell("sh ~/.config/awesome/autorun.sh")
 -- awful.spawn.with_shell("pkill http-server")
