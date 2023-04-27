@@ -259,27 +259,13 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
--- Application related keybindings
-require("keybindings.application")
-
--- Awesome keys
-require("keybindings.awesome")
-
--- Screen related keybindings
-require("keybindings.screen")
-
--- Tags related keybindings
-require("keybindings.tag")
-
--- Client related keybindings
-require("keybindings.client")
-
--- Launcher related keybindings
-awful.keyboard.append_global_keybindings({
-	awful.key({ super }, "p", function()
-		menubar.show()
-	end, { description = "show the menubar", group = "launcher" }),
-})
+-- Keybindigs
+require("keybindings.application") -- Application related keybindings
+require("keybindings.awesome") -- Awesome keys
+require("keybindings.client") -- Client related keybindings
+require("keybindings.launcher") -- Launcher related keybindings
+require("keybindings.screen") -- Screen related keybindings
+require("keybindings.tag") -- Tags related keybindings
 
 -- Layout related keybindings
 awful.keyboard.append_global_keybindings({
