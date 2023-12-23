@@ -1,6 +1,6 @@
-local default_config = {
+local config = {
   lsp = {
-    format_on_save = true, -- true/false or table of filetypes {'.ts', '.js',}
+    format_on_save = { '.ts', '.py' },
     format_timeout = 3000,
     rename_notification = true,
     servers = {
@@ -18,8 +18,6 @@ local default_config = {
     },
   },
 }
-
-local config = default_config
 local user_servers = vim.tbl_keys(config.lsp.servers)
 
 function config.lsp.can_client_format(client_name)

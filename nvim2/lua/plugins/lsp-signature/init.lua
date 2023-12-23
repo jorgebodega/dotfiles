@@ -1,9 +1,6 @@
-local config = require('core.user')
-local u = require('utils')
-
-require('lsp_signature').setup(u.merge({
+require('lsp_signature').setup({
   bind = true, -- This is mandatory, otherwise border config won't get registered.
   handler_opts = {
-    border = config.border,
+    border = 'rounded',
   },
-}, config.lsp_signature or {}))
+})

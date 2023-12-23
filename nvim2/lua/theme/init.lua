@@ -1,7 +1,8 @@
-require('theme.colors')
+local highlights = require('utils.highlights')
 
-local get_highlight = require('utils').get_highlight
-local set_highlight = require('utils').set_highlight
+local get_highlight = highlights.get_highlight
+local set_highlight = highlights.set_highlight
+
 local statusline_colors = get_highlight('StatusLine')
 local error_colors = get_highlight('DiagnosticError')
 local warning_colors = get_highlight('DiagnosticWarn')

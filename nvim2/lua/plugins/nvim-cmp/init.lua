@@ -1,7 +1,5 @@
 local cmp = require('cmp')
-local u = require('utils')
 local luasnip = require('luasnip')
-local user_config = require('core.user')
 local icons = require('theme.icons')
 
 local has_words_before = function()
@@ -9,7 +7,7 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
-local default_cmp_opts = {
+cmp.setup({
   enabled = function()
     -- disable completion in comments
     local context = require('cmp.config.context')
@@ -67,7 +65,7 @@ local default_cmp_opts = {
   }),
   window = {
     documentation = {
-      border = user_config.border,
+      border = 'rounded',
       winhighlight = 'FloatBorder:FloatBorder,Normal:Normal',
     },
   },
@@ -76,10 +74,10 @@ local default_cmp_opts = {
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
+    -- { name = 'nvim_lua' },
     { name = 'luasnip' },
-    { name = 'buffer' },
-    { name = 'path' },
+    -- { name = 'buffer' },
+    -- { name = 'path' },
   }),
   formatting = {
     format = function(entry, vim_item)
@@ -88,16 +86,14 @@ local default_cmp_opts = {
       vim_item.menu = ({
         nvim_lsp = '[lsp]',
         luasnip = '[snip]',
-        buffer = '[buf]',
-        path = '[path]',
-        nvim_lua = '[nvim_api]',
+        -- buffer = '[buf]',
+        -- path = '[path]',
+        -- nvim_lua = '[nvim_api]',
       })[entry.source.name]
       return vim_item
     end,
   },
-}
-
-cmp.setup(u.merge(default_cmp_opts, user_config.nvim_cmp or {}))
+})
 
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),

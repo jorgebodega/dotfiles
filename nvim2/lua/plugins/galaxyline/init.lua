@@ -1,13 +1,16 @@
 local galaxy = require('galaxyline')
-local gls = galaxy.section
 local diag = require('galaxyline.providers.diagnostic')
 local condition = require('galaxyline.condition')
 local fileinfo = require('galaxyline.providers.fileinfo')
 local u = require('utils')
 local colors = require('theme.colors')
 local icons = require('theme.icons')
-local get_highlight = require('utils').get_highlight
-local set_highlight = require('utils').set_highlight
+local hightlights = require('utils.highlights')
+
+local gls = galaxy.section
+local get_highlight = hightlights.get_highlight
+local set_highlight = hightlights.set_highlight
+
 local statusline_colors = get_highlight('StatusLine')
 
 local get_mode = function()

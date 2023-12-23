@@ -16,18 +16,18 @@ packer.init({
 })
 
 return packer.startup(function(use)
-  use({
-    'wbthomason/packer.nvim',
-    'lewis6991/impatient.nvim',
-  })
+  use({ 'wbthomason/packer.nvim' })
+  use({ 'lewis6991/impatient.nvim' })
+  use({ 'nvim-lua/popup.nvim' })
+  use({ 'nvim-lua/plenary.nvim' })
+  use({ 'jdhao/better-escape.vim' }) --, event = 'InsertEnter' })
+  -- use({ 'Tastyep/structlog.nvim' })
 
   use({
     'shaunsingh/nord.nvim',
     as = 'nord',
     config = function()
-      vim.g.nord_contrast = true
-      vim.g.nord_borders = true
-      require('nord').set()
+      require('plugins.nord')
     end,
   })
 
@@ -79,64 +79,64 @@ return packer.startup(function(use)
   --   event = 'BufWinEnter',
   -- })
 
-  -- use({
-  --   'neovim/nvim-lspconfig',
-  --   config = function()
-  --     require('lsp')
-  --   end,
-  --   requires = {
-  --     { 'b0o/SchemaStore.nvim' },
-  --     { 'williamboman/nvim-lsp-installer' },
-  --     { 'jose-elias-alvarez/nvim-lsp-ts-utils' },
-  --     {
-  --       'jose-elias-alvarez/null-ls.nvim',
-  --       config = function()
-  --         require('lsp.providers.null_ls')
-  --       end,
-  --       after = 'nvim-lspconfig',
-  --     },
-  --     {
-  --       'ray-x/lsp_signature.nvim',
-  --       config = function()
-  --         require('plugins.lsp-signature')
-  --       end,
-  --       after = 'nvim-lspconfig',
-  --     },
-  --   },
-  --   event = 'BufWinEnter',
-  -- })
+  use({
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('lsp')
+    end,
+    requires = {
+      { 'b0o/SchemaStore.nvim' },
+      { 'williamboman/nvim-lsp-installer' },
+      -- { 'jose-elias-alvarez/nvim-lsp-ts-utils' },
+      {
+        'jose-elias-alvarez/null-ls.nvim',
+        config = function()
+          require('lsp.providers.null_ls')
+        end,
+        after = 'nvim-lspconfig',
+      },
+      -- {
+      --   'ray-x/lsp_signature.nvim',
+      --   config = function()
+      --     require('plugins.lsp-signature')
+      --   end,
+      --   after = 'nvim-lspconfig',
+      -- },
+    },
+    event = 'BufWinEnter',
+  })
 
-  -- -- autocompletion
-  -- use({
-  --   'hrsh7th/nvim-cmp',
-  --   config = function()
-  --     require('plugins.nvim-cmp')
-  --   end,
-  --   requires = {
-  --     {
-  --       'L3MON4D3/LuaSnip',
-  --       config = function()
-  --         require('plugins.luasnip')
-  --       end,
-  --       requires = {
-  --         'rafamadriz/friendly-snippets',
-  --       },
-  --     },
-  --     { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
-  --     { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
-  --     { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-  --     { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
-  --     { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-  --     {
-  --       'windwp/nvim-autopairs',
-  --       config = function()
-  --         require('plugins.auto-pairs')
-  --       end,
-  --       after = 'nvim-cmp',
-  --     },
-  --   },
-  --   event = 'InsertEnter',
-  -- })
+  -- snippets
+  use({ 'rafamadriz/friendly-snippets' })
+  use({
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require('plugins.luasnip')
+    end,
+  })
+
+  -- autocompletion
+  use({
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('plugins.nvim-cmp')
+    end,
+    requires = {
+      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
+      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+      -- { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+      -- { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
+      -- { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+      {
+        'windwp/nvim-autopairs',
+        config = function()
+          require('plugins.autopairs')
+        end,
+        after = 'nvim-cmp',
+      },
+    },
+    event = 'InsertEnter',
+  })
 
   -- -- git commands
   -- -- todo maybe this one could be deleted

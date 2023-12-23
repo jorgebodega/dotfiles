@@ -1,14 +1,14 @@
 local colors = require('theme.colors')
-local set_highlight = require('utils').set_highlight
+local set_highlight = require('utils.highlights').set_highlight
 
 set_highlight('NotifyINFOBorder', {
-  guifg = colors.hint,
+  guifg = colors.info,
 })
 set_highlight('NotifyINFOTitle', {
-  guifg = colors.hint,
+  guifg = colors.info,
 })
 set_highlight('NotifyINFOIcon', {
-  guifg = colors.hint,
+  guifg = colors.info,
 })
 set_highlight('NotifyWARNBorder', {
   guifg = colors.warn,

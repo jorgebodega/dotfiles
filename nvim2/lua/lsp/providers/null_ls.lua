@@ -1,27 +1,29 @@
-local u = require('utils')
-local defaults = require('lsp.providers.defaults')
 local null_ls = require('null-ls')
-local config = require('core.user')
 
-local config_opts = u.merge(config.lsp.servers.null_ls or {}, {
-  default_cosmic_sources = true,
-})
-
--- how to disable sources?
-if config_opts.default_cosmic_sources then
-  config_opts.sources = u.merge_list({
+null_ls.setup({
+  on_attach = require('lsp.utils.attach').on_attach,
+  root_dir = function(fname)
+    local util = require('lspconfig').util
+    return util.root_pattern('.git')(fname)
+      or util.root_pattern('tsconfig.base.json')(fname)
+      or util.root_pattern('package.json')(fname)
+      or util.root_pattern('.eslintrc.js')(fname)
+      or util.root_pattern('.eslintrc.json')(fname)
+      or util.root_pattern('tsconfig.json')(fname)
+  end,
+  sources = {
     null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.code_actions.gitsigns,
+    null_ls.builtins.diagnostics.actionlint,
     null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.diagnostics.markdownlint,
+    -- null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.prettierd.with({
       env = {
         PRETTIERD_LOCAL_PRETTIER_ONLY = 1,
       },
     }),
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.code_actions.gitsigns,
-  }, config_opts.sources or {})
-end
-
-require('null-ls').setup(u.merge(defaults, config_opts))
+  },
+})

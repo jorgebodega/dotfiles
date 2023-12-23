@@ -1,6 +1,5 @@
-local icons = require('theme.icons')
-
 local notify = require('notify')
+local icons = require('theme.icons')
 
 vim.notify = notify
 notify.setup({

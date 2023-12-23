@@ -1,6 +1,4 @@
-local u = require('utils')
 local icons = require('theme.icons')
-local config = require('core.user')
 
 -- set up LSP signs
 local signs = {
@@ -31,13 +29,13 @@ end
 
 -- set up vim.diagnostics
 -- vim.diagnostic.config opts
-vim.diagnostic.config(u.merge({
+vim.diagnostic.config({
   underline = true,
   signs = true,
   update_in_insert = false,
   severity_sort = true,
   float = {
-    border = config.border,
+    border = 'rounded',
     focusable = false,
     header = { icons.debug .. ' Diagnostics:', 'Normal' },
     scope = 'line',
@@ -53,4 +51,4 @@ vim.diagnostic.config(u.merge({
     },
     format = format,
   },
-}, config.diagnostic or {}))
+})
