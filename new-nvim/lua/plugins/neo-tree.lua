@@ -10,10 +10,14 @@ return {
     })
   end,
   dependencies = {
-    { "MunifTanjim/nui.nvim", tag = "0.2.0" },
+    "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
   },
-  event = "VeryLazy",
-  tag = "3.13",
+  keys = {
+    { "<leader>ff", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
+    { "<leader>fl", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
+    { "<leader>fr", ":Neotree toggle right<CR>", silent = true, desc = "Right File Explorer" },
+  },
+  lazy = true,
 }
