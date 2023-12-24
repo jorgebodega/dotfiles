@@ -16,7 +16,6 @@ return {
     R = { ":Telescope registers<cr>", "Registers" },
     t = { ":Telescope live_grep<cr>", "Live Grep" },
     T = { ":Telescope grep_string<cr>", "Grep String" },
-    k = { ":Telescope keymaps<cr>", "Keymaps" },
     C = { ":Telescope commands<cr>", "Commands" },
     l = { ":Telescope resume<cr>", "Resume last search" },
     c = { ":Telescope git_commits<cr>", "Git commits" },
@@ -27,13 +26,5 @@ return {
     e = { ":Telescope frecency<cr>", "Frecency" },
     b = { ":Telescope buffers<cr>", "Buffers" },
     p = { ":AerialToggle!<cr>", "Areal Toggle" },
-    d = {
-      name = "+DAP",
-      c = { ":Telescope dap commands<cr>", "Dap Commands" },
-      b = { ":Telescope dap list_breakpoints<cr>", "Dap Breakpoints" },
-      g = { ":Telescope dap configurations<cr>", "Dap Configurations" },
-      v = { ":Telescope dap variables<cr>", "Dap Variables" },
-      f = { ":Telescope dap frames<cr>", "Dap Frames" },
-    },
   },
 }
