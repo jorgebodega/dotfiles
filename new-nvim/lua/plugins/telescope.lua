@@ -2,37 +2,23 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
-    config = function()
+    config = function(_, opts)
       local telescope = require("telescope")
 
-      telescope.setup({
-        file_ignore_patterns = { "%.git/." },
-      })
+      telescope.setup(opts)
+
+      telescope.load_extension("frecency")
+      telescope.load_extension("fzf")
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-tree/nvim-web-devicons",
     },
-  },
-  {
-    "nvim-telescope/telescope-frecency.nvim",
-    config = function()
-      require("telescope").load_extension("frecency")
-    end,
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-    config = function()
-      require("telescope").load_extension("fzf")
-    end,
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
+    lazy = true,
+    opts = {
+      file_ignore_patterns = { "%.git/." },
     },
   },
 }
