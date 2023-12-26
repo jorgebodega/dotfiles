@@ -15,5 +15,4 @@ return {
       update_debounce = 200,
     })
   end,
-  tag = "v0.7",
 }

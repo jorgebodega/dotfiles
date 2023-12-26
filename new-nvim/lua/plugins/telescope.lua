@@ -9,11 +9,13 @@ return {
 
       telescope.load_extension("frecency")
       telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-frecency.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-telescope/telescope-ui-select.nvim",
       "nvim-tree/nvim-web-devicons",
     },
     lazy = true,

@@ -1,6 +1,3 @@
 return {
-  {
-    "folke/lazy.nvim",
-    tag = "v10.15.1",
-  },
+  "folke/lazy.nvim",
 }

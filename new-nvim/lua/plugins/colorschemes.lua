@@ -19,6 +19,5 @@ return {
     enabled = true,
     name = "catppuccin",
     priority = 1000,
-    tag = "v1.5.0",
   },
 }
