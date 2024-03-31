@@ -16,18 +16,18 @@
 
 ## Adibhanna packages
 
-- [X] aerial.lua
+- [] aerial.lua
 - [] alfa-nvim.lua
 - [] bufferline.lua
-- [X] colorschemes.lua
+- [] colorschemes.lua
 - [] comments.lua
 - [] copilot.lua
 - [] editorconfig-vim.lua
 - [] fidget.lua
-- [X] gitsigns.lua
+- [] gitsigns.lua
 - [] glance.lua
 - [] golang.lua
-- [X] indent-blankline.lua
+- [] indent-blankline.lua
 - [] leap.lua
 - [] lsp-zero.lua
 - [] lualine.lua
