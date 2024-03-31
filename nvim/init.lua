@@ -1,6 +1,4 @@
-require "bootstrap"
+require("config.options")
 
-local plugins = require "plugins"
-require("plugin-loader").install(plugins)
-
-require("config-loader").setup()
+require("config.keymaps")
+require("config.lazy")
