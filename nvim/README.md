@@ -3,9 +3,9 @@
 [List of plugins used](https://github.com/stars/jorgebodega/lists/neovim)
 
 - [] Revisar Neotree config
-        - [] Revisar NUI
-        - [] Revisar plenary
-        - [] Revisar icons
+  - [] Revisar NUI
+  - [] Revisar plenary
+  - [] Revisar icons
 - [] Revisar Lualine config
 - [] Revisar Telescope config
         - Requiere `make` para funcionar
@@ -13,6 +13,13 @@
 - [] Revisar LSP config
         - [] Falta autocompletado e informacion
 - []
+
+## Packages
+
+- [] [catppuccin](https://github.com/catppuccin/nvim)
+- [] [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  - [] [treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+  - [] [treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 
 ## Adibhanna packages
 
