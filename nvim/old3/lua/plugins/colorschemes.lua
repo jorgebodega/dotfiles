@@ -1,7 +1,7 @@
 return {
   {
     "catppuccin/nvim",
-    priority = 900,
+    priority = 1000,
     name = "catppuccin",
     config = function()
       require("catppuccin").setup({
@@ -10,7 +10,7 @@ return {
         },
       })
 
-      -- vim.api.nvim_command("colorscheme catppuccin-frappe")
+      vim.api.nvim_command("colorscheme catppuccin-frappe")
     end,
   },
 }
