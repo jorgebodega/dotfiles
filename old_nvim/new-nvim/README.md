@@ -3,9 +3,9 @@
 [List of plugins used](https://github.com/stars/jorgebodega/lists/neovim)
 
 - [] Revisar Neotree config
-  - [] Revisar NUI
-  - [] Revisar plenary
-  - [] Revisar icons
+        - [] Revisar NUI
+        - [] Revisar plenary
+        - [] Revisar icons
 - [] Revisar Lualine config
 - [] Revisar Telescope config
         - Requiere `make` para funcionar
@@ -14,27 +14,20 @@
         - [] Falta autocompletado e informacion
 - []
 
-## Packages
-
-- [] [catppuccin](https://github.com/catppuccin/nvim)
-- [] [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  - [] [treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
-  - [] [treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
-
 ## Adibhanna packages
 
-- [] aerial.lua
+- [X] aerial.lua
 - [] alfa-nvim.lua
 - [] bufferline.lua
-- [] colorschemes.lua
+- [X] colorschemes.lua
 - [] comments.lua
 - [] copilot.lua
 - [] editorconfig-vim.lua
 - [] fidget.lua
-- [] gitsigns.lua
+- [X] gitsigns.lua
 - [] glance.lua
 - [] golang.lua
-- [] indent-blankline.lua
+- [X] indent-blankline.lua
 - [] leap.lua
 - [] lsp-zero.lua
 - [] lualine.lua
