@@ -1,5 +1,5 @@
 local _M = {
-	terminal = os.getenv("TERMINAL") or "alacritty",
+	terminal = os.getenv("TERMINAL") or "kitty",
 	editor = os.getenv("EDITOR") or "nvim",
 	visual = os.getenv("VISUAL") or "code",
 	browser = os.getenv("BROWSER") or "firefox",

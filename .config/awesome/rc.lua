@@ -57,7 +57,7 @@ beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- TODO: Add env control here
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -81,9 +81,9 @@ awful.layout.layouts = {
 	awful.layout.suit.max.fullscreen,
 	awful.layout.suit.magnifier,
 	awful.layout.suit.corner.nw,
-	-- awful.layout.suit.corner.ne,
-	-- awful.layout.suit.corner.sw,
-	-- awful.layout.suit.corner.se,
+	-- 	awful.layout.suit.corner.ne,
+	-- 	awful.layout.suit.corner.sw,
+	-- 	awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -260,6 +260,9 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+-- Config
+-- require("config.layouts")
+
 -- Keybindings
 require("keybindings.application") -- Application related keybindings
 require("keybindings.awesome") -- Awesome keys
@@ -328,6 +331,7 @@ awful.rules.rules = {
 		properties = {
 			border_width = beautiful.border_width,
 			border_color = beautiful.border_normal,
+			opacity = 1,
 			focus = awful.client.focus.filter,
 			raise = true,
 			keys = clientkeys,
