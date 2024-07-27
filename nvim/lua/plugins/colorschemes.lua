@@ -1,8 +1,6 @@
 return {
   {
     "catppuccin/nvim",
-    priority = 900,
-    name = "catppuccin",
     config = function()
       require("catppuccin").setup({
         integrations = {
@@ -10,7 +8,11 @@ return {
         },
       })
 
-      -- vim.api.nvim_command("colorscheme catppuccin-frappe")
+      vim.api.nvim_command("colorscheme catppuccin-frappe")
     end,
+    event = "VeryLazy",
+    name = "catppuccin",
+    priority = 100,
+    version = "*",
   },
 }

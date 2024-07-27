@@ -17,7 +17,6 @@ require("lazy").setup({ import = "plugins" }, {
   },
   install = {
     missing = false,
-    colorscheme = { "catppuccin" },
   },
   performance = {
     rtp = {
