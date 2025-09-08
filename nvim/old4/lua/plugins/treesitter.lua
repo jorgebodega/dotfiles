@@ -5,6 +5,7 @@ return {
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
+    event = { "BufReadPost", "BufNewFile" },
     name = "treesitter",
     opts = {
       ensure_installed = {

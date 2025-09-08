@@ -10,9 +10,8 @@ return {
 
       vim.api.nvim_command("colorscheme catppuccin-frappe")
     end,
-    event = "VeryLazy",
     name = "catppuccin",
-    priority = 100,
+    priority = 150,
     version = "*",
   },
 }
