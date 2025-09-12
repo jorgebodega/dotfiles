@@ -22,10 +22,7 @@ if ! command -v paru >/dev/null 2>&1; then
     rm -rf "$tmpdir"
 fi
 
-source installers/hyprland.sh
 source installers/paru.sh
-
-link_hyprland_config
 link_paru_config
 
 # Install paru itself (after config symlink if you keep config inside)
@@ -33,28 +30,45 @@ paru -Syq --needed --noconfirm \
     paru-bin \
     > /dev/null
 
-# paru -Sy --needed --noconfirm \
-#     hyprland \
-#     hyprlock \
-#     hyprpaper \
-#     hypridle \
-#     hyprshot \
-#     satty \
-#     bitwarden \
-#     xdg-desktop-portal-hyprland
+source installers/hyprland.sh
+source installers/waybar.sh
 
-# repo_root="${0:A:h}"  # Absolute path of this script directory (zsh-specific :A)
-# repo_hypr_dir="$repo_root/.config/hypr"
-# if [[ -d "$repo_hypr_dir" ]]; then
-#     target_hypr_dir="$HOME/.config/hypr"
-#     if [[ -e "$target_hypr_dir" ]]; then
-#         echo "hypr directory already exists at $target_hypr_dir" >&2
-#         exit 1
-#     fi
-#     mkdir -p "$HOME/.config"
-#     ln -s "$repo_hypr_dir" "$target_hypr_dir"
-#     echo "Created symlink: $target_hypr_dir -> $repo_hypr_dir" >&2
-# fi
+link_hyprland_config
+link_waybar_config
 
-# echo "Done"
+# COMPROBAR IWD
+paru -Sy --needed --noconfirm \
+    blueberry \
+    btop \
+    hypridle \
+    hyprland \
+    hyprland-qtutils \
+    hyprlock \
+    hyprpaper \
+    hyprpicker \
+    hyprshot \
+    hyprsunset \
+    impala \
+    noto-fonts \
+    noto-fonts-cjk \
+    noto-fonts-emoji \
+    noto-fonts-extra \
+    satty \
+    ttf-cascadia-mono-nerd \
+    uwsm \
+    waybar \
+    xdg-desktop-portal-gtk \
+    xdg-desktop-portal-hyprland \
+    zen-browser-bin
+
+# wl-clipboard
+# Optional dependencies for uwsm
+#     bemenu: optional picker for uuctl support
+#     dmenu: optional picker for uuctl support
+#     fuzzel: optional picker for uuctl support
+#     libnewt: for "uwsm start select" [installed]
+#     libnotify: for feeback from "uswm app" commands or fmon service [installed]
+#     rofi-wayland: optional picker for uuctl support [installed]
+#     wmenu: optional picker for uuctl support
+#     wofi: optional picker for uuctl support
 
