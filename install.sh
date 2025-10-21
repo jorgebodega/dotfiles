@@ -48,6 +48,7 @@ link_zshrc_config
 paru -Syq --needed --noconfirm \
     blueberry \
     btop \
+    fnm-bin \
     hypridle \
     hyprland \
     hyprland-qtutils \

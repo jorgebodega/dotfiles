@@ -1,2 +1,10 @@
 packer_compiled.vim
 .config/nvim/.vscode/
+
+# Firefox/Zen Browser sensitive data
+.zen/key4.db
+.zen/logins.json
+.zen/cookies.sqlite
+.zen/cert9.db
+.zen/places.sqlite
+.zen/sessionCheckpoints.json

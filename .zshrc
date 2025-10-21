@@ -50,25 +50,19 @@ alias ytwc="yarn test:watch --coverage"
 alias gcnv="git commit --no-verify"
 
 export GH_EDITOR="nvim"
-export DENO_INSTALL="$HOME/.deno"
 
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export PATH="$PATH:$HOME/.local/bin/:$DENO_INSTALL/bin"
+export PATH="$PATH:$HOME/.local/bin/"
 
 # pnpm
 export PNPM_HOME="/home/jorgebodega/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-eval "$(rbenv init - zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 
