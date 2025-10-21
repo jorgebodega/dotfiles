@@ -4,28 +4,26 @@ link_paru_config() {
     local src_dir=".config/paru"
     local abs_src_dir="$(readlink -f $src_dir)"
     local target_dir="$HOME/.config/paru"
+    local backup_dir="$HOME/.config/paru.backup"
 
     if [[ ! -d "$src_dir" ]]; then
         echo "Config directory not found (expected repo $src_dir)" >&2
         return 1
     fi
 
-    if [[ -L "$target_dir" ]]; then
-        local current="$(readlink -f "$target_dir" 2>/dev/null || true)"
-        echo "Current symlink target: $current"
-        if [[ "$current" == "$abs_src_dir" ]]; then
-            echo "Existing symlink points to $current" >&2
-            return 0
-        else
-            echo "Existing symlink points to $current (expected $abs_src_dir)" >&2
-            return 1
-        fi
-    elif [[ -e "$target_dir" ]]; then
-        echo "Path already exists (not a symlink): $target_dir" >&2
-        return 1
+    # Remove old backup if exists
+    if [[ -e "$backup_dir" || -L "$backup_dir" ]]; then
+        echo "Removing old backup at $backup_dir" >&2
+        rm -rf "$backup_dir"
+    fi
+
+    # Backup existing config if present
+    if [[ -e "$target_dir" || -L "$target_dir" ]]; then
+        echo "Backing up existing paru config to $backup_dir" >&2
+        mv "$target_dir" "$backup_dir"
     fi
 
     mkdir -p "$HOME/.config"
-    ln -s "$(readlink -f "$src_dir")" "$target_dir"
-    echo "Created symlink: $target_dir -> $src_dir" >&2
+    ln -s "$abs_src_dir" "$target_dir"
+    echo "Created symlink: $target_dir -> $abs_src_dir" >&2
 }

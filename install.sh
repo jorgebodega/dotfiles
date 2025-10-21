@@ -31,9 +31,11 @@ paru -Syq --needed --noconfirm \
     > /dev/null
 
 source installers/hyprland.sh
+source installers/kitty.sh
 source installers/waybar.sh
 
 link_hyprland_config
+link_kitty_config
 link_waybar_config
 
 # COMPROBAR IWD
@@ -49,11 +51,13 @@ paru -Sy --needed --noconfirm \
     hyprshot \
     hyprsunset \
     impala \
+    kitty \
     mako \
     noto-fonts \
     noto-fonts-cjk \
     noto-fonts-emoji \
     noto-fonts-extra \
+    rofi \
     satty \
     ttf-cascadia-mono-nerd \
     uwsm \

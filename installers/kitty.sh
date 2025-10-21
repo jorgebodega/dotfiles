@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
-link_waybar_config() {
-    local src_dir=".config/waybar"
+link_kitty_config() {
+    local src_dir=".config/kitty"
     local abs_src_dir="$(readlink -f $src_dir)"
-    local target_dir="$HOME/.config/waybar"
-    local backup_dir="$HOME/.config/waybar.backup"
+    local target_dir="$HOME/.config/kitty"
+    local backup_dir="$HOME/.config/kitty.backup"
 
     if [[ ! -d "$src_dir" ]]; then
         echo "Config directory not found (expected repo $src_dir)" >&2
@@ -19,7 +19,7 @@ link_waybar_config() {
 
     # Backup existing config if present
     if [[ -e "$target_dir" || -L "$target_dir" ]]; then
-        echo "Backing up existing waybar config to $backup_dir" >&2
+        echo "Backing up existing kitty config to $backup_dir" >&2
         mv "$target_dir" "$backup_dir"
     fi
 
