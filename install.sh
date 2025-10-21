@@ -32,14 +32,20 @@ paru -Syq --needed --noconfirm \
 
 source installers/hyprland.sh
 source installers/kitty.sh
+source installers/rofi.sh
+source installers/starship.sh
 source installers/waybar.sh
+source installers/zshrc.sh
 
 link_hyprland_config
 link_kitty_config
+link_rofi_config
+link_starship_config
 link_waybar_config
+link_zshrc_config
 
 # COMPROBAR IWD
-paru -Sy --needed --noconfirm \
+paru -Syq --needed --noconfirm \
     blueberry \
     btop \
     hypridle \
@@ -59,14 +65,17 @@ paru -Sy --needed --noconfirm \
     noto-fonts-extra \
     rofi \
     satty \
+    starship \
     ttf-cascadia-mono-nerd \
     uwsm \
+    visual-studio-code-bin \
     waybar \
     wl-clip-persist \
     wl-clipboard \
     xdg-desktop-portal-gtk \
     xdg-desktop-portal-hyprland \
-    zen-browser-bin
+    zen-browser-bin \
+    zsh
 
 # wl-clipboard
 # Optional dependencies for uwsm
