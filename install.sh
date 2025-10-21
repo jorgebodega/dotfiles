@@ -48,6 +48,7 @@ link_zshrc_config
 paru -Syq --needed --noconfirm \
     blueberry \
     btop \
+    eza \
     fnm-bin \
     hypridle \
     hyprland \
@@ -64,6 +65,7 @@ paru -Syq --needed --noconfirm \
     noto-fonts-cjk \
     noto-fonts-emoji \
     noto-fonts-extra \
+    oh-my-zsh-git \
     rofi \
     satty \
     starship \
@@ -76,7 +78,10 @@ paru -Syq --needed --noconfirm \
     xdg-desktop-portal-gtk \
     xdg-desktop-portal-hyprland \
     zen-browser-bin \
-    zsh
+    zsh \
+    zsh-autocomplete \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting \
 
 # wl-clipboard
 # Optional dependencies for uwsm

@@ -1,9 +1,23 @@
+# Path to Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
-export UPDATE_ZSH_DAYS=7
+# Set theme (empty because using Starship)
+ZSH_THEME=""
 
-HIST_STAMPS="dd/mm/yyyy"
+# Update settings (modern zstyle format)
+zstyle ':omz:update' mode auto
+zstyle ':omz:update' frequency 7
 
+# History timestamp format
+HIST_STAMPS="yyyy-mm-dd"
+
+# XDG Base Directory specification
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# Plugins
 plugins=(
     archlinux
     bgnotify
@@ -13,55 +27,49 @@ plugins=(
     git
     kubectl
     npm
-    rbenv
     ssh-agent
+    zsh-autocomplete
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive completion
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa
+
+# Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# Editor
 export EDITOR='nvim'
+export GH_EDITOR="nvim"
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
+# Compilation flags (dynamic architecture detection)
+export ARCHFLAGS="-arch $(uname -m)"
 
-alias nvim-jorge="nvim -u ~/.config/nvim2/init.lua"
-alias zshconfig="nvim  ~/.zshrc"
-alias zshreload="source ~/.zshrc"
+# Custom PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-alias ls="exa"
-alias ll="exa -lh"
-alias la="exa -ah"
-alias lla="exa -lah"
-alias lt="exa -T"
-alias lta="exa -Ta"
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
-alias pacman="sudo pacman"
-alias paru="paru"
-
+# Aliases - File operations
+alias ls="eza"
+alias ll="eza -lh"
+alias la="eza -ah"
+alias lla="eza -lah"
+alias lt="eza -T"
+alias lta="eza -Ta"
 alias cat="bat"
 alias find="fd"
 
+# Aliases - Shell config
+alias zshconfig="nvim ~/.zshrc"
+alias zshreload="source ~/.zshrc"
+
 alias ytw="yarn test:watch --coverage=false"
 alias ytwc="yarn test:watch --coverage"
-alias gcnv="git commit --no-verify"
-
-export GH_EDITOR="nvim"
-
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-
-export PATH="$PATH:$HOME/.local/bin/"
-
-# pnpm
-export PNPM_HOME="/home/jorgebodega/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
