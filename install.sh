@@ -30,12 +30,6 @@ paru -Syq --needed --noconfirm \
     paru-bin \
     > /dev/null
 
-# Install Oh My Zsh if not present
-if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
-    echo "Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-fi
-
 source installers/hyprland.sh
 source installers/kitty.sh
 source installers/rofi.sh
@@ -74,6 +68,7 @@ paru -Syq --needed --noconfirm \
     rofi \
     satty \
     starship \
+    subversion \
     ttf-cascadia-mono-nerd \
     uwsm \
     visual-studio-code-bin \
@@ -83,10 +78,8 @@ paru -Syq --needed --noconfirm \
     xdg-desktop-portal-gtk \
     xdg-desktop-portal-hyprland \
     zen-browser-bin \
+    zinit \
     zsh \
-    zsh-autocomplete \
-    zsh-autosuggestions \
-    zsh-syntax-highlighting \
 
 # wl-clipboard
 # Optional dependencies for uwsm
