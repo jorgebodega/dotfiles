@@ -48,8 +48,10 @@ link_zshrc_config
 paru -Syq --needed --noconfirm \
     blueberry \
     btop \
+    dbeaver \
     eza \
     fnm-bin \
+    gitkraken \
     hypridle \
     hyprland \
     hyprland-qtutils \
@@ -67,8 +69,10 @@ paru -Syq --needed --noconfirm \
     noto-fonts-extra \
     rofi \
     satty \
+    spotify \
     starship \
     subversion \
+    telegram-desktop \
     ttf-cascadia-mono-nerd \
     uwsm \
     visual-studio-code-bin \
