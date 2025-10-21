@@ -49,6 +49,7 @@ paru -Sy --needed --noconfirm \
     hyprshot \
     hyprsunset \
     impala \
+    mako \
     noto-fonts \
     noto-fonts-cjk \
     noto-fonts-emoji \
@@ -57,6 +58,8 @@ paru -Sy --needed --noconfirm \
     ttf-cascadia-mono-nerd \
     uwsm \
     waybar \
+    wl-clip-persist \
+    wl-clipboard \
     xdg-desktop-portal-gtk \
     xdg-desktop-portal-hyprland \
     zen-browser-bin
