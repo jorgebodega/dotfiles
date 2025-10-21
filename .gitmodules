@@ -1,6 +1,3 @@
-[submodule ".config/awesome/rofi"]
-	path = .config/awesome/rofi
-	url = https://github.com/adi1090x/rofi
 [submodule ".config/kitty/catppuccin"]
 	path = .config/kitty/catppuccin
 	url = https://github.com/catppuccin/kitty
