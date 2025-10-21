@@ -30,6 +30,12 @@ paru -Syq --needed --noconfirm \
     paru-bin \
     > /dev/null
 
+# Install Oh My Zsh if not present
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+    echo "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
 source installers/hyprland.sh
 source installers/kitty.sh
 source installers/rofi.sh
@@ -65,7 +71,6 @@ paru -Syq --needed --noconfirm \
     noto-fonts-cjk \
     noto-fonts-emoji \
     noto-fonts-extra \
-    oh-my-zsh-git \
     rofi \
     satty \
     starship \
