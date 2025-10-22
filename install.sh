@@ -46,9 +46,11 @@ link_zshrc_config
 
 # COMPROBAR IWD
 paru -Syq --needed --noconfirm \
+    bat \
     blueberry \
     btop \
     dbeaver \
+    docker \
     eza \
     fnm-bin \
     gitkraken \
@@ -67,6 +69,7 @@ paru -Syq --needed --noconfirm \
     noto-fonts-cjk \
     noto-fonts-emoji \
     noto-fonts-extra \
+    openssh \
     rofi \
     satty \
     spotify \
