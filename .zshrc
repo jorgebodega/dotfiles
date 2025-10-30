@@ -82,5 +82,9 @@ alias find="fd"
 alias zshconfig="nvim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 
+# From paru package installation
+source /opt/google-cloud-cli/path.zsh.inc
+source /opt/google-cloud-cli/completion.zsh.inc
+
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"

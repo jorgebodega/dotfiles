@@ -51,6 +51,9 @@ paru -Syq --needed --noconfirm \
     btop \
     dbeaver \
     docker \
+    docker-buildx \
+    docker-compose \
+    downgrade \
     eza \
     fnm-bin \
     gitkraken \
