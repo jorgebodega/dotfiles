@@ -1,0 +1,2 @@
+disable systemd-networkd-wait-online.service
+enable sddm.service

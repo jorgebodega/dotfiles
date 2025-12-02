@@ -36,6 +36,7 @@ source installers/mako.sh
 source installers/rofi.sh
 source installers/sddm.sh
 source installers/starship.sh
+source installers/systemd.sh
 source installers/vscode.sh
 source installers/waybar.sh
 source installers/zshrc.sh
@@ -50,7 +51,7 @@ link_starship_config
 link_waybar_config
 link_zshrc_config
 
-# COMPROBAR IWD
+# Install all packages first
 paru -Syq --needed --noconfirm \
     bat \
     blueberry \
@@ -105,6 +106,9 @@ paru -Syq --needed --noconfirm \
     zen-browser-bin \
     zinit \
     zsh \
+
+# Configure systemd services AFTER all packages are installed
+configure_systemd_services
 
 # wl-clipboard
 # Optional dependencies for uwsm
