@@ -1,0 +1,48 @@
+# Mako notification daemon configuration
+# Catppuccin Frappe Peach theme
+
+# Colors
+background-color=#303446
+text-color=#c6d0f5
+border-color=#ef9f76
+progress-color=over #414559
+
+# Behavior
+max-visible=5
+default-timeout=0
+ignore-timeout=1
+
+# Layout
+width=400
+height=100
+margin=10
+padding=15
+border-size=2
+border-radius=8
+
+# Text
+font=CaskaydiaMono Nerd Font 12
+format=<b>%s</b>\n%b
+
+# Anchor position (top-right)
+anchor=top-right
+
+# Click behavior
+on-button-left=invoke-default-action
+on-button-right=dismiss
+
+# Low urgency styling - 10 second timeout
+[urgency=low]
+border-color=#81c8be
+background-color=#626880
+default-timeout=10000
+
+# Normal urgency styling
+[urgency=normal]
+border-color=#e5c890
+background-color=#51576d
+
+# High urgency styling - critical, no timeout
+[urgency=critical]
+border-color=#e78284
+background-color=#414559

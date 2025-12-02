@@ -1,0 +1,212 @@
+{
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "autoDocstring.startOnNewLine": true,
+  "chat.agent.thinkingStyle": "collapsedPreview",
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.serverSampling": {
+    "Global in Code: upstash/context7": {
+      "allowedModels": [
+        "copilot/auto"
+      ]
+    }
+  },
+  "chat.tools.terminal.autoApprove": {
+    "npm view": true,
+    "\"": true,
+    "PGPASSWORD=backstage": true,
+    "docker exec": true,
+    "yarn ci": true,
+    "yarn explain": true,
+    "yarn prettier": true
+  },
+  "docker.extension.enableComposeLanguageServer": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never"
+  },
+  "editor.columnSelection": false,
+  "editor.fontFamily": "'CaskaydiaMono Nerd Font', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 15,
+  "editor.formatOnSave": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.lintTask.enable": true,
+  "eslint.lintTask.options": "--cache . --ext js,ts",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+  },
+  "extensions.ignoreRecommendations": false,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.git": false
+  },
+  "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
+  "github.copilot.advanced": {
+    "*": true,
+    "inlineSuggestCount": 10,
+    "listCount": 10
+  },
+  "github.copilot.chat.newWorkspace.useContext7": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": false,
+    "python": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "git.mergeEditor": false,
+  "git.openRepositoryInParentFolders": "never",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "jest.runMode": "on-demand",
+  "js/ts.implicitProjectConfig.module": "CommonJS",
+  "launch": {
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Jest - Global",
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+        "args": [
+          "--coverage=false",
+          "--watch",
+          "--testTimeout=100000",
+          "${relativeFile}"
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      }
+    ],
+    "compounds": []
+  },
+  "Lua.workspace.library": [
+    "/usr/share/nvim/runtime/lua",
+    "/usr/share/nvim/runtime/lua/vim/lsp"
+  ],
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.exclude": [
+    ".venv"
+  ],
+  "python.languageServer": "Pylance",
+  "python.testing.pytestPath": ".venv/bin/pytest",
+  "redhat.telemetry.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.enableMultiLinePasteWarning": "auto",
+  "terminal.integrated.fontSize": 15,
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/*/**",
+    "**/.venv/**"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.startupEditor": "newUntitledFile",
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "gitlens.mode.active": "zen",
+  "chat.mcp.gallery.enabled": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1"
+}

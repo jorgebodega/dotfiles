@@ -68,15 +68,13 @@ export PATH="$HOME/.local/bin:$PATH"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-# Aliases - File operations
+alias dc="docker compose"
 alias ls="eza"
 alias ll="eza -lh"
 alias la="eza -ah"
 alias lla="eza -lah"
 alias lt="eza -T"
 alias lta="eza -Ta"
-alias cat="bat"
-alias find="fd"
 
 # Aliases - Shell config
 alias zshconfig="nvim ~/.zshrc"

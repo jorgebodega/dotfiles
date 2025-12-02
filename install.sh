@@ -32,15 +32,21 @@ paru -Syq --needed --noconfirm \
 
 source installers/hyprland.sh
 source installers/kitty.sh
+source installers/mako.sh
 source installers/rofi.sh
+source installers/sddm.sh
 source installers/starship.sh
+source installers/vscode.sh
 source installers/waybar.sh
 source installers/zshrc.sh
 
 link_hyprland_config
 link_kitty_config
+link_mako_config
 link_rofi_config
+link_sddm_config
 link_starship_config
+# link_vscode_config
 link_waybar_config
 link_zshrc_config
 
@@ -49,6 +55,7 @@ paru -Syq --needed --noconfirm \
     bat \
     blueberry \
     btop \
+    catppuccin-sddm-theme-frappe \
     dbeaver \
     docker \
     docker-buildx \
@@ -59,10 +66,11 @@ paru -Syq --needed --noconfirm \
     gitkraken \
     hypridle \
     hyprland \
-    hyprland-qtutils \
+    hyprland-guiutils \
     hyprlock \
     hyprpaper \
     hyprpicker \
+    hyprpolkitagent \
     hyprshot \
     hyprsunset \
     impala \
@@ -73,8 +81,15 @@ paru -Syq --needed --noconfirm \
     noto-fonts-emoji \
     noto-fonts-extra \
     openssh \
+    qt5-quickcontrols2 \
+    qt5-wayland \
+    qt6-declarative \
+    qt6-svg \
+    qt6-wayland \
     rofi \
     satty \
+    sddm \
+    sddm-conf \
     spotify \
     starship \
     subversion \
@@ -101,4 +116,3 @@ paru -Syq --needed --noconfirm \
 #     rofi-wayland: optional picker for uuctl support [installed]
 #     wmenu: optional picker for uuctl support
 #     wofi: optional picker for uuctl support
-
